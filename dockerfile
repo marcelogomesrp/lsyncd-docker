@@ -2,6 +2,7 @@ FROM alpine:3.12
 LABEL maintainer="Marcelo Gomes de Paula"
 RUN apk add --no-cache lsyncd
 RUN mkdir -p /var/log/lsyncd/
+RUN chmod -R 777 /var/log/lsyncd/
 COPY ./lsyncd.conf /etc/lsyncd/
 VOLUME /source
 VOLUME /target
